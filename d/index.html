@@ -828,6 +828,9 @@ button.num:hover .n-open .i{transform:translate(2px,-2px)}
 .hv-live[data-m] .hd-coin{display:none!important}
 .hv-live.is-port[data-m=below] .hd-c{display:block}
 .hv-live.is-port[data-m=below] .hv-shade{background:radial-gradient(80% 24% at 50% 30%,rgba(8,8,8,.82),rgba(8,8,8,.3) 75%,rgba(8,8,8,0)),linear-gradient(to bottom,rgba(8,8,8,.5),rgba(8,8,8,0) 12%)}
+/* phone (as on axyglobal.com): no animation, black with a soft orange glow */
+.hv-live.is-off{background:radial-gradient(90% 38% at 50% 0%,rgba(255,127,44,.16),transparent 70%),radial-gradient(80% 30% at 50% 100%,rgba(255,127,44,.09),transparent 70%),#080808}
+.hv-live.is-off .hd-stage,.hv-live.is-off .hd-coin,.hv-live.is-off .hv-shade{display:none}
 </style>
 </head>
 <body>
@@ -1418,7 +1421,7 @@ button.num:hover .n-open .i{transform:translate(2px,-2px)}
     var st = hv.querySelector('.hd-stage'), svg = st.querySelector('.hd-svg'), svg2 = st.querySelector('.hd-svg2'), floorEl = st.querySelector('.hd-floor'), lastDl = -1;
     var cards = [].slice.call(st.querySelectorAll('.hd-c')), pools = [].slice.call(st.querySelectorAll('.hd-pool'));
     var coins = [].slice.call(hv.querySelectorAll('.hd-coin')), words = [].slice.call(hero.querySelectorAll('#h1 .w')), coinXY = [];
-    var MODE = hv.getAttribute('data-m') || 'mini', ctas = hero.querySelector('.ctas'), heroIn = hero.querySelector('.hero-in');   // phone: mini | below | neon
+    var MODE = hv.getAttribute('data-m') || 'off', ctas = hero.querySelector('.ctas'), heroIn = hero.querySelector('.hero-in');   // phone: off (as on axyglobal.com: no animation) | mini | below | neon
     var paths = [].slice.call(svg.querySelectorAll('.hd-p')), widths = paths.map(function(p){ return +p.getAttribute('data-w'); });
     var head = svg2.querySelector('#hdHead'), run = svg2.querySelector('#hdRun'), flash = svg2.querySelector('#hdFlash');
     var reflG = svg.querySelector('#hdReflT'), clipR = svg.querySelector('#hdClipR'), sparks = [].slice.call(svg2.querySelectorAll('.hd-sp'));
@@ -1464,6 +1467,8 @@ button.num:hover .n-open .i{transform:translate(2px,-2px)}
           cards: [{x: 12, y: base + 44, s: .5, r: 10, t: .55}, {x: 150, y: base + 28, s: .52, r: -6, t: 1.3}, {x: 262, y: base + 4, s: .44, r: -10, t: 1.7}] };
         sig = 'below:' + Math.round(base);
       } else if (heroIn) heroIn.style.paddingBottom = '';
+      var off = key === 'port' && MODE === 'off'; hv.classList.toggle('is-off', off);
+      if (off) { cur = 'off'; L = null; return; }
       var s = Lk.top ? r.width / Lk.W : Math.max(r.width / Lk.W, hero.offsetHeight / Lk.H);
       st.style.width = Lk.W + 'px'; st.style.height = Lk.H + 'px';
       st.style.transform = 'translate(' + f(Lk.top ? 0 : (r.width - Lk.W * s) / 2) + 'px,' + f(Lk.top ? 0 : (hero.offsetHeight - Lk.H * s) / 2) + 'px) scale(' + s.toFixed(4) + ')';
