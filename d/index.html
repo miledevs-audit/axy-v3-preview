@@ -799,6 +799,14 @@ button.num:hover .n-open .i{transform:translate(2px,-2px)}
 @media (max-aspect-ratio:4/5){.hv-live .hv-shade{background:radial-gradient(62% 30% at 50% 44%,rgba(8,8,8,.86),rgba(8,8,8,.55) 70%,rgba(8,8,8,.3)),linear-gradient(to bottom,rgba(8,8,8,.5),rgba(8,8,8,0) 14%)}}
 @media (prefers-reduced-motion:reduce){.hv-live *{animation:none!important}}
 .hv-live + .hero-fade{height:6%}
+
+/* phone: platform coins next to their names in the heading (cards hidden) */
+.hd-coin{position:absolute;z-index:2;left:0;top:0;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;display:none;place-items:center;color:#fff;opacity:0;will-change:transform,opacity;
+  background:radial-gradient(circle at 34% 28%,#3b3b3b,#141414 62%,#0a0a0a);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.28),inset 0 -2px 4px rgba(0,0,0,.6),0 0 0 1.5px rgba(255,127,44,.9),0 0 14px rgba(255,127,44,.55),0 10px 22px -8px rgba(0,0,0,.9)}
+.hd-coin svg{width:23px;height:23px}
+.hv-live.is-port .hd-coin{display:grid}
+.hv-live.is-port .hd-c{display:none}
 </style>
 </head>
 <body>
@@ -838,7 +846,7 @@ button.num:hover .n-open .i{transform:translate(2px,-2px)}
   <section class="hero" id="top" aria-labelledby="h1">
     <div class="hero-bg" aria-hidden="true"></div>
     
-    <div class="hv hv-live" aria-hidden="true"><div class="hd-stage"><div class="hd-floor"></div><div class="hd-pool"></div><div class="hd-pool"></div><div class="hd-pool"></div><div class="hd-pool"></div><svg class="hd-svg"><defs><filter id="hdGlow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="10"/></filter><clipPath id="hdClip"><rect id="hdClipR" x="0"/></clipPath></defs><g clip-path="url(#hdClip)" opacity=".3"><g id="hdReflT"><g filter="url(#hdGlow)"><path class="hd-p" data-w="26" stroke="#ff7f2c" opacity=".7"/></g><path class="hd-p" data-w="9" stroke="#ff7f2c" opacity=".8"/></g></g><g filter="url(#hdGlow)"><path class="hd-p" data-w="30" stroke="#ff7f2c" opacity=".42"/></g><path class="hd-p" data-w="10" stroke="#f0731f" opacity=".85"/><path class="hd-p" data-w="3.2" stroke="#ffd2ad" opacity=".75"/></svg><svg class="hd-svg hd-svg2"><defs><filter id="hdGlow2" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="10"/></filter></defs><g id="hdHead"><path d="M0 -34 L25 13 L0 4 L-25 13 Z" fill="#ff7f2c" filter="url(#hdGlow2)" opacity=".85"/><path d="M0 -32 L23 12 L0 3 L-23 12 Z" fill="#ff8a3d" stroke="#ffe2c8" stroke-width="2.5" stroke-linejoin="round"/></g><g id="hdRun"><circle r="13" fill="#ff7f2c" filter="url(#hdGlow2)"/><circle r="4.5" fill="#fff"/></g><g id="hdFlash"><circle r="26" fill="#ff7f2c" filter="url(#hdGlow2)"/><path d="M0 -60 L5 -5 L60 0 L5 5 L0 60 L-5 5 L-60 0 L-5 -5 Z" fill="#fff4ea"/><circle r="8" fill="#fff"/></g><g><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/></g></svg><div class="hd-c hd-amz"><div class="hd-amz-top"><svg><use href="#b-amazon"/></svg><span>amazon</span></div><div class="hd-ph"><img src="../img/case-humidifier.webp" alt=""></div><p class="hd-nm">Mushroom-shaped humidifier</p><span class="hd-btn">Add to Cart</span></div><div class="hd-c hd-phone hd-tt"><div class="hd-scr"><img src="../media/tt-screen.webp" alt=""><div class="hd-shade"></div><span class="hd-isl"></span><div class="hd-tt-top"><svg><use href="#b-tiktok"/></svg>TikTok Shop</div><span class="hd-like"><svg><use href="#i-heart"/></svg></span><span class="hd-hrt"><svg><use href="#i-heart"/></svg></span><span class="hd-hrt"><svg><use href="#i-heart"/></svg></span><span class="hd-hrt"><svg><use href="#i-heart"/></svg></span><span class="hd-hrt"><svg><use href="#i-heart"/></svg></span><span class="hd-cart">Add to Cart</span></div></div><div class="hd-c hd-phone hd-sh"><div class="hd-scr"><span class="hd-isl"></span><div class="hd-sh-top"><svg><use href="#b-shopify"/></svg><b>Shopify</b></div><div class="hd-sh-win"><div class="hd-sh-feed"><img src="../img/shop-davika.webp" alt=""><img src="../img/shop-brainrich.webp" alt=""><img src="../img/shop-mg.webp" alt=""></div></div></div></div></div><div class="hv-shade"></div></div>
+    <div class="hv hv-live" aria-hidden="true"><div class="hd-stage"><div class="hd-floor"></div><div class="hd-pool"></div><div class="hd-pool"></div><div class="hd-pool"></div><div class="hd-pool"></div><svg class="hd-svg"><defs><filter id="hdGlow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="10"/></filter><clipPath id="hdClip"><rect id="hdClipR" x="0"/></clipPath></defs><g clip-path="url(#hdClip)" opacity=".3"><g id="hdReflT"><g filter="url(#hdGlow)"><path class="hd-p" data-w="26" stroke="#ff7f2c" opacity=".7"/></g><path class="hd-p" data-w="9" stroke="#ff7f2c" opacity=".8"/></g></g><g filter="url(#hdGlow)"><path class="hd-p" data-w="30" stroke="#ff7f2c" opacity=".42"/></g><path class="hd-p" data-w="10" stroke="#f0731f" opacity=".85"/><path class="hd-p" data-w="3.2" stroke="#ffd2ad" opacity=".75"/></svg><svg class="hd-svg hd-svg2"><defs><filter id="hdGlow2" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="10"/></filter></defs><g id="hdHead"><path d="M0 -34 L25 13 L0 4 L-25 13 Z" fill="#ff7f2c" filter="url(#hdGlow2)" opacity=".85"/><path d="M0 -32 L23 12 L0 3 L-23 12 Z" fill="#ff8a3d" stroke="#ffe2c8" stroke-width="2.5" stroke-linejoin="round"/></g><g id="hdRun"><circle r="13" fill="#ff7f2c" filter="url(#hdGlow2)"/><circle r="4.5" fill="#fff"/></g><g id="hdFlash"><circle r="26" fill="#ff7f2c" filter="url(#hdGlow2)"/><path d="M0 -60 L5 -5 L60 0 L5 5 L0 60 L-5 5 L-60 0 L-5 -5 Z" fill="#fff4ea"/><circle r="8" fill="#fff"/></g><g><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/></g></svg><div class="hd-c hd-amz"><div class="hd-amz-top"><svg><use href="#b-amazon"/></svg><span>amazon</span></div><div class="hd-ph"><img src="../img/case-humidifier.webp" alt=""></div><p class="hd-nm">Mushroom-shaped humidifier</p><span class="hd-btn">Add to Cart</span></div><div class="hd-c hd-phone hd-tt"><div class="hd-scr"><img src="../media/tt-screen.webp" alt=""><div class="hd-shade"></div><span class="hd-isl"></span><div class="hd-tt-top"><svg><use href="#b-tiktok"/></svg>TikTok Shop</div><span class="hd-like"><svg><use href="#i-heart"/></svg></span><span class="hd-hrt"><svg><use href="#i-heart"/></svg></span><span class="hd-hrt"><svg><use href="#i-heart"/></svg></span><span class="hd-hrt"><svg><use href="#i-heart"/></svg></span><span class="hd-hrt"><svg><use href="#i-heart"/></svg></span><span class="hd-cart">Add to Cart</span></div></div><div class="hd-c hd-phone hd-sh"><div class="hd-scr"><span class="hd-isl"></span><div class="hd-sh-top"><svg><use href="#b-shopify"/></svg><b>Shopify</b></div><div class="hd-sh-win"><div class="hd-sh-feed"><img src="../img/shop-davika.webp" alt=""><img src="../img/shop-brainrich.webp" alt=""><img src="../img/shop-mg.webp" alt=""></div></div></div></div></div><div class="hv-shade"></div><span class="hd-coin"><svg><use href="#b-amazon"/></svg></span><span class="hd-coin"><svg><use href="#b-tiktok"/></svg></span><span class="hd-coin"><svg><use href="#b-shopify"/></svg></span></div>
     <div class="hero-fade" aria-hidden="true"></div>
     <div class="wrap hero-in">
       <div class="hero-copy" id="hero-copy">
@@ -1388,6 +1396,7 @@ button.num:hover .n-open .i{transform:translate(2px,-2px)}
     var NS = 'http://www.w3.org/2000/svg';
     var st = hv.querySelector('.hd-stage'), svg = st.querySelector('.hd-svg'), svg2 = st.querySelector('.hd-svg2'), floorEl = st.querySelector('.hd-floor'), lastDl = -1;
     var cards = [].slice.call(st.querySelectorAll('.hd-c')), pools = [].slice.call(st.querySelectorAll('.hd-pool'));
+    var coins = [].slice.call(hv.querySelectorAll('.hd-coin')), words = [].slice.call(hero.querySelectorAll('#h1 .w')), coinXY = [];
     var paths = [].slice.call(svg.querySelectorAll('.hd-p')), widths = paths.map(function(p){ return +p.getAttribute('data-w'); });
     var head = svg2.querySelector('#hdHead'), run = svg2.querySelector('#hdRun'), flash = svg2.querySelector('#hdFlash');
     var reflG = svg.querySelector('#hdReflT'), clipR = svg.querySelector('#hdClipR'), sparks = [].slice.call(svg2.querySelectorAll('.hd-sp'));
@@ -1397,7 +1406,7 @@ button.num:hover .n-open .i{transform:translate(2px,-2px)}
         cards: [{x: 80, y: 290, s: 1, r: 14, t: .55}, {x: 985, y: 445, s: 1, r: -11, t: 1.3}, {x: 1168, y: 236, s: 1, r: -15, t: 1.7}] },
       // phone: everything inside the first screen (~640px), platforms peek from the edges beside the heading
       port: { W: 400, H: 860, floor: 2000, nw: .78, top: true,
-        pts: [[-20,640],[96,585],[150,585],[214,446],[260,446],[292,108]],
+        pts: [[-20,700],[100,640],[150,640],[236,470],[282,470],[352,112]],
         cards: [{x: -30, y: 214, s: .42, r: 16, t: .55}, {x: 330, y: 340, s: .4, r: -10, t: 1.3}, {x: 314, y: 88, s: .39, r: -14, t: 1.7}] }
     };
     var L, cur, len = 0, dims = [], TIP, ANG, reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1426,7 +1435,8 @@ button.num:hover .n-open .i{transform:translate(2px,-2px)}
       var Lk = LAY[key], s = Lk.top ? r.width / Lk.W : Math.max(r.width / Lk.W, hero.offsetHeight / Lk.H);
       st.style.width = Lk.W + 'px'; st.style.height = Lk.H + 'px';
       st.style.transform = 'translate(' + f(Lk.top ? 0 : (r.width - Lk.W * s) / 2) + 'px,' + f(Lk.top ? 0 : (hero.offsetHeight - Lk.H * s) / 2) + 'px) scale(' + s.toFixed(4) + ')';
-      if (key === cur) return; cur = key; L = LAY[key];
+      placeCoins(key);
+      if (key === cur) return; cur = key; L = LAY[key]; hv.classList.toggle('is-port', key === 'port');
       [svg, svg2].forEach(function(s){ s.setAttribute('viewBox', '0 0 ' + L.W + ' ' + L.H); s.setAttribute('width', L.W); s.setAttribute('height', L.H); }); lastDl = -1;
       var d = pathD(L.pts, 26 * L.nw);
       paths.forEach(function(p, i){ p.setAttribute('d', d); p.setAttribute('stroke-width', widths[i] * L.nw); });
@@ -1444,6 +1454,19 @@ button.num:hover .n-open .i{transform:translate(2px,-2px)}
       });
     }
 
+    // coin i sits beside heading word i: Amazon left, TikTok Shop right, Shopify left (centred in the free margin)
+    function placeCoins(key){
+      coinXY = [];
+      if (key !== 'port' || words.length < 3) return;
+      var hr = hero.getBoundingClientRect(), W = hr.width;
+      words.slice(0, 3).forEach(function(w, i){
+        var r = w.getBoundingClientRect(), left = i !== 1, cy = r.top - hr.top + r.height * .52;
+        var cx = left ? (r.left - hr.left) / 2 : (r.right - hr.left + W) / 2;
+        var room = left ? r.left - hr.left : W - (r.right - hr.left);   // free margin beside the word
+        cx = Math.max(27, Math.min(W - 27, cx));
+        coinXY.push([cx, cy, left ? -1 : 1, Math.min(1, Math.max(.7, (room - 8) / 50))]);
+      });
+    }
     function penAt(t){ return len * sine(seg(t, .15, 2.05)); }
     function render(T){
       if (!L) return;
@@ -1474,6 +1497,15 @@ button.num:hover .n-open .i{transform:translate(2px,-2px)}
         var ry = cf.r + (1 - e) * (i ? -70 : 70) + Math.sin(T * .9 + i) * 2.5 * a;
         c.style.opacity = f(clamp(a * 3) * DIM);
         c.style.transform = 'translate3d(' + f(tx) + 'px,' + f(ty) + 'px,0) perspective(1100px) rotateY(' + f(ry) + 'deg) scale(' + f(cf.s * (.86 + .14 * back(a))) + ')';
+      });
+      // phone: coins pop in one after another, float, flare when the energy run passes
+      coins.forEach(function(c, i){
+        if (!coinXY[i]) return;
+        var q = coinXY[i], t0 = [.5, 1.1, 1.6][i], a = seg(T, t0, t0 + .5), e = back(a);
+        var fl = u >= 0 ? Math.exp(-Math.pow((u - (.55 + i * .3)) / .18, 2)) : 0;
+        c.style.opacity = f(clamp(a * 3) * .95);
+        c.style.transform = 'translate3d(' + f(q[0] + (1 - a) * 18 * q[2]) + 'px,' + f(q[1] + Math.sin(T * 1.6 + i * 2) * 3 * a) + 'px,0) scale(' + f(Math.max(0, e) * q[3] * (1 + .12 * fl)) + ')';
+        c.style.boxShadow = 'inset 0 1px 0 rgba(255,255,255,.28),inset 0 -2px 4px rgba(0,0,0,.6),0 0 0 1.5px rgba(255,127,44,.9),0 0 ' + f(14 + 22 * fl) + 'px rgba(255,127,44,' + f(.55 + .4 * fl) + '),0 10px 22px -8px rgba(0,0,0,.9)';
       });
       // sparks rising from the tube
       sparks.forEach(function(sp, j){
