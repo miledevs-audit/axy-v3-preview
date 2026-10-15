@@ -800,12 +800,30 @@ button.num:hover .n-open .i{transform:translate(2px,-2px)}
 @media (prefers-reduced-motion:reduce){.hv-live *{animation:none!important}}
 .hv-live + .hero-fade{height:6%}
 
-/* phone: platform coins next to their names in the heading (cards hidden) */
-.hd-coin{position:absolute;z-index:2;left:0;top:0;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;display:none;place-items:center;color:#fff;opacity:0;will-change:transform,opacity;
-  background:radial-gradient(circle at 34% 28%,#3b3b3b,#141414 62%,#0a0a0a);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.28),inset 0 -2px 4px rgba(0,0,0,.6),0 0 0 1.5px rgba(255,127,44,.9),0 0 14px rgba(255,127,44,.55),0 10px 22px -8px rgba(0,0,0,.9)}
-.hd-coin svg{width:23px;height:23px}
-.hv-live.is-port .hd-coin{display:grid}
+/* phone: mini picture cards next to their names in the heading (desktop cards hidden) */
+.hd-coin{position:absolute;z-index:2;left:0;top:0;display:none;opacity:0;overflow:hidden;will-change:transform,opacity;--fl:0;
+  border:1px solid rgba(255,255,255,.2);
+  box-shadow:0 0 0 1px rgba(255,127,44,calc(.35 + var(--fl) * .6)),0 0 calc(10px + var(--fl) * 26px) rgba(255,127,44,calc(.28 + var(--fl) * .5)),0 14px 26px -10px rgba(0,0,0,.9)}
+.hd-coin img{display:block;width:100%;object-fit:cover}
+.hd-coin svg{display:block}
+.hd-m-amz{width:72px;height:86px;margin:-43px 0 0 -36px;border-radius:14px;background:linear-gradient(180deg,#262626,#121212)}
+.hd-m-amz img{height:61px;border-radius:13px 13px 0 0}
+.hd-m-amz b{display:flex;align-items:center;justify-content:center;gap:4px;height:25px;color:#fff;font:800 11.5px/1 var(--f-d);letter-spacing:-.01em}
+.hd-m-amz b svg{width:13px;height:13px}
+.hd-m-tt,.hd-m-sh{padding:3px;border-radius:13px;background:linear-gradient(145deg,#5a5a5a,#141414 20%,#0b0b0b 60%,#3a3a3a)}
+.hd-m-tt{width:50px;height:100px;margin:-50px 0 0 -25px}
+.hd-m-sh{width:50px;height:100px;margin:-50px 0 0 -25px;border-color:#ff7f2c;box-shadow:0 0 0 1.5px #ff7f2c,0 0 calc(14px + var(--fl) * 26px) rgba(255,127,44,calc(.55 + var(--fl) * .4)),0 14px 26px -10px rgba(0,0,0,.9)}
+.hd-m-tt img,.hd-m-sh img{height:100%;border-radius:10px}
+.hd-m-sh img{object-position:28% top;background:#fff}
+.hd-m-tt b,.hd-m-sh b{position:absolute;left:50%;transform:translateX(-50%);display:grid;place-items:center;border-radius:50%;color:#fff}
+.hd-m-tt b{top:7px;width:18px;height:18px;background:rgba(0,0,0,.55)}
+.hd-m-tt b svg{width:11px;height:11px}
+.hd-m-tt i{position:absolute;right:6px;bottom:22px;width:15px;height:15px;border-radius:50%;background:#ff7f2c;display:grid;place-items:center}
+.hd-m-tt i svg{width:9px;height:9px;fill:#fff;color:#fff}
+.hd-m-sh b{bottom:7px;width:24px;height:24px;background:#0b0b0b;box-shadow:0 0 0 1px rgba(255,127,44,.8)}
+.hd-m-sh b svg{width:14px;height:14px}
+.hd-m-tt::after,.hd-m-sh::after{content:"";position:absolute;inset:3px;border-radius:10px;background:linear-gradient(115deg,rgba(255,255,255,.18),transparent 40%);pointer-events:none}
+.hv-live.is-port .hd-coin{display:block}
 .hv-live.is-port .hd-c{display:none}
 </style>
 </head>
@@ -846,7 +864,7 @@ button.num:hover .n-open .i{transform:translate(2px,-2px)}
   <section class="hero" id="top" aria-labelledby="h1">
     <div class="hero-bg" aria-hidden="true"></div>
     
-    <div class="hv hv-live" aria-hidden="true"><div class="hd-stage"><div class="hd-floor"></div><div class="hd-pool"></div><div class="hd-pool"></div><div class="hd-pool"></div><div class="hd-pool"></div><svg class="hd-svg"><defs><filter id="hdGlow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="10"/></filter><clipPath id="hdClip"><rect id="hdClipR" x="0"/></clipPath></defs><g clip-path="url(#hdClip)" opacity=".3"><g id="hdReflT"><g filter="url(#hdGlow)"><path class="hd-p" data-w="26" stroke="#ff7f2c" opacity=".7"/></g><path class="hd-p" data-w="9" stroke="#ff7f2c" opacity=".8"/></g></g><g filter="url(#hdGlow)"><path class="hd-p" data-w="30" stroke="#ff7f2c" opacity=".42"/></g><path class="hd-p" data-w="10" stroke="#f0731f" opacity=".85"/><path class="hd-p" data-w="3.2" stroke="#ffd2ad" opacity=".75"/></svg><svg class="hd-svg hd-svg2"><defs><filter id="hdGlow2" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="10"/></filter></defs><g id="hdHead"><path d="M0 -34 L25 13 L0 4 L-25 13 Z" fill="#ff7f2c" filter="url(#hdGlow2)" opacity=".85"/><path d="M0 -32 L23 12 L0 3 L-23 12 Z" fill="#ff8a3d" stroke="#ffe2c8" stroke-width="2.5" stroke-linejoin="round"/></g><g id="hdRun"><circle r="13" fill="#ff7f2c" filter="url(#hdGlow2)"/><circle r="4.5" fill="#fff"/></g><g id="hdFlash"><circle r="26" fill="#ff7f2c" filter="url(#hdGlow2)"/><path d="M0 -60 L5 -5 L60 0 L5 5 L0 60 L-5 5 L-60 0 L-5 -5 Z" fill="#fff4ea"/><circle r="8" fill="#fff"/></g><g><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/></g></svg><div class="hd-c hd-amz"><div class="hd-amz-top"><svg><use href="#b-amazon"/></svg><span>amazon</span></div><div class="hd-ph"><img src="../img/case-humidifier.webp" alt=""></div><p class="hd-nm">Mushroom-shaped humidifier</p><span class="hd-btn">Add to Cart</span></div><div class="hd-c hd-phone hd-tt"><div class="hd-scr"><img src="../media/tt-screen.webp" alt=""><div class="hd-shade"></div><span class="hd-isl"></span><div class="hd-tt-top"><svg><use href="#b-tiktok"/></svg>TikTok Shop</div><span class="hd-like"><svg><use href="#i-heart"/></svg></span><span class="hd-hrt"><svg><use href="#i-heart"/></svg></span><span class="hd-hrt"><svg><use href="#i-heart"/></svg></span><span class="hd-hrt"><svg><use href="#i-heart"/></svg></span><span class="hd-hrt"><svg><use href="#i-heart"/></svg></span><span class="hd-cart">Add to Cart</span></div></div><div class="hd-c hd-phone hd-sh"><div class="hd-scr"><span class="hd-isl"></span><div class="hd-sh-top"><svg><use href="#b-shopify"/></svg><b>Shopify</b></div><div class="hd-sh-win"><div class="hd-sh-feed"><img src="../img/shop-davika.webp" alt=""><img src="../img/shop-brainrich.webp" alt=""><img src="../img/shop-mg.webp" alt=""></div></div></div></div></div><div class="hv-shade"></div><span class="hd-coin"><svg><use href="#b-amazon"/></svg></span><span class="hd-coin"><svg><use href="#b-tiktok"/></svg></span><span class="hd-coin"><svg><use href="#b-shopify"/></svg></span></div>
+    <div class="hv hv-live" aria-hidden="true"><div class="hd-stage"><div class="hd-floor"></div><div class="hd-pool"></div><div class="hd-pool"></div><div class="hd-pool"></div><div class="hd-pool"></div><svg class="hd-svg"><defs><filter id="hdGlow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="10"/></filter><clipPath id="hdClip"><rect id="hdClipR" x="0"/></clipPath></defs><g clip-path="url(#hdClip)" opacity=".3"><g id="hdReflT"><g filter="url(#hdGlow)"><path class="hd-p" data-w="26" stroke="#ff7f2c" opacity=".7"/></g><path class="hd-p" data-w="9" stroke="#ff7f2c" opacity=".8"/></g></g><g filter="url(#hdGlow)"><path class="hd-p" data-w="30" stroke="#ff7f2c" opacity=".42"/></g><path class="hd-p" data-w="10" stroke="#f0731f" opacity=".85"/><path class="hd-p" data-w="3.2" stroke="#ffd2ad" opacity=".75"/></svg><svg class="hd-svg hd-svg2"><defs><filter id="hdGlow2" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="10"/></filter></defs><g id="hdHead"><path d="M0 -34 L25 13 L0 4 L-25 13 Z" fill="#ff7f2c" filter="url(#hdGlow2)" opacity=".85"/><path d="M0 -32 L23 12 L0 3 L-23 12 Z" fill="#ff8a3d" stroke="#ffe2c8" stroke-width="2.5" stroke-linejoin="round"/></g><g id="hdRun"><circle r="13" fill="#ff7f2c" filter="url(#hdGlow2)"/><circle r="4.5" fill="#fff"/></g><g id="hdFlash"><circle r="26" fill="#ff7f2c" filter="url(#hdGlow2)"/><path d="M0 -60 L5 -5 L60 0 L5 5 L0 60 L-5 5 L-60 0 L-5 -5 Z" fill="#fff4ea"/><circle r="8" fill="#fff"/></g><g><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/><circle class="hd-sp" fill="#ffb27a"/></g></svg><div class="hd-c hd-amz"><div class="hd-amz-top"><svg><use href="#b-amazon"/></svg><span>amazon</span></div><div class="hd-ph"><img src="../img/case-humidifier.webp" alt=""></div><p class="hd-nm">Mushroom-shaped humidifier</p><span class="hd-btn">Add to Cart</span></div><div class="hd-c hd-phone hd-tt"><div class="hd-scr"><img src="../media/tt-screen.webp" alt=""><div class="hd-shade"></div><span class="hd-isl"></span><div class="hd-tt-top"><svg><use href="#b-tiktok"/></svg>TikTok Shop</div><span class="hd-like"><svg><use href="#i-heart"/></svg></span><span class="hd-hrt"><svg><use href="#i-heart"/></svg></span><span class="hd-hrt"><svg><use href="#i-heart"/></svg></span><span class="hd-hrt"><svg><use href="#i-heart"/></svg></span><span class="hd-hrt"><svg><use href="#i-heart"/></svg></span><span class="hd-cart">Add to Cart</span></div></div><div class="hd-c hd-phone hd-sh"><div class="hd-scr"><span class="hd-isl"></span><div class="hd-sh-top"><svg><use href="#b-shopify"/></svg><b>Shopify</b></div><div class="hd-sh-win"><div class="hd-sh-feed"><img src="../img/shop-davika.webp" alt=""><img src="../img/shop-brainrich.webp" alt=""><img src="../img/shop-mg.webp" alt=""></div></div></div></div></div><div class="hv-shade"></div><span class="hd-coin hd-m-amz"><img src="../img/case-humidifier.webp" alt=""><b><svg><use href="#b-amazon"/></svg>amazon</b></span><span class="hd-coin hd-m-tt"><img src="../media/tt-screen.webp" alt=""><b><svg><use href="#b-tiktok"/></svg></b><i><svg><use href="#i-heart"/></svg></i></span><span class="hd-coin hd-m-sh"><img src="../img/shop-brainrich.webp" alt=""><b><svg><use href="#b-shopify"/></svg></b></span></div>
     <div class="hero-fade" aria-hidden="true"></div>
     <div class="wrap hero-in">
       <div class="hero-copy" id="hero-copy">
@@ -1454,17 +1472,19 @@ button.num:hover .n-open .i{transform:translate(2px,-2px)}
       });
     }
 
-    // coin i sits beside heading word i: Amazon left, TikTok Shop right, Shopify left (centred in the free margin)
+    // mini card i sits beside heading word i: Amazon right, TikTok Shop left, Shopify right (inside the free margin)
     function placeCoins(key){
       coinXY = [];
       if (key !== 'port' || words.length < 3) return;
       var hr = hero.getBoundingClientRect(), W = hr.width;
       words.slice(0, 3).forEach(function(w, i){
-        var r = w.getBoundingClientRect(), left = i !== 1, cy = r.top - hr.top + r.height * .52;
+        var r = w.getBoundingClientRect(), left = i === 1, cy = r.top - hr.top + r.height * .52;
         var cx = left ? (r.left - hr.left) / 2 : (r.right - hr.left + W) / 2;
         var room = left ? r.left - hr.left : W - (r.right - hr.left);   // free margin beside the word
         cx = Math.max(27, Math.min(W - 27, cx));
-        coinXY.push([cx, cy, left ? -1 : 1, Math.min(1, Math.max(.7, (room - 8) / 50))]);
+        var need = [72, 50, 50][i];
+        cx = left ? Math.max(need / 2 + 6, Math.min(cx, room - need / 2 - 6)) : Math.min(W - need / 2 - 6, Math.max(cx, W - room + need / 2 + 6));
+        coinXY.push([cx, cy + [-12, 0, -12][i], left ? -1 : 1, Math.min(1, Math.max(.72, (room - 12) / need)), [8, -8, 6][i]]);
       });
     }
     function penAt(t){ return len * sine(seg(t, .15, 2.05)); }
@@ -1504,8 +1524,8 @@ button.num:hover .n-open .i{transform:translate(2px,-2px)}
         var q = coinXY[i], t0 = [.5, 1.1, 1.6][i], a = seg(T, t0, t0 + .5), e = back(a);
         var fl = u >= 0 ? Math.exp(-Math.pow((u - (.55 + i * .3)) / .18, 2)) : 0;
         c.style.opacity = f(clamp(a * 3) * .95);
-        c.style.transform = 'translate3d(' + f(q[0] + (1 - a) * 18 * q[2]) + 'px,' + f(q[1] + Math.sin(T * 1.6 + i * 2) * 3 * a) + 'px,0) scale(' + f(Math.max(0, e) * q[3] * (1 + .12 * fl)) + ')';
-        c.style.boxShadow = 'inset 0 1px 0 rgba(255,255,255,.28),inset 0 -2px 4px rgba(0,0,0,.6),0 0 0 1.5px rgba(255,127,44,.9),0 0 ' + f(14 + 22 * fl) + 'px rgba(255,127,44,' + f(.55 + .4 * fl) + '),0 10px 22px -8px rgba(0,0,0,.9)';
+        c.style.transform = 'translate3d(' + f(q[0] + (1 - a) * 18 * q[2]) + 'px,' + f(q[1] + Math.sin(T * 1.6 + i * 2) * 3 * a) + 'px,0) rotate(' + f(q[4] + Math.sin(T * 1.1 + i) * 1.5 * a) + 'deg) scale(' + f(Math.max(0, e) * q[3] * (1 + .06 * fl)) + ')';
+        c.style.setProperty('--fl', f(fl));
       });
       // sparks rising from the tube
       sparks.forEach(function(sp, j){
