@@ -750,7 +750,29 @@ button.num:hover .n-open .i{transform:translate(2px,-2px)}
 .hv-t:nth-child(odd){margin-top:70px}
 .hv-t video{width:100%;height:100%;object-fit:cover;filter:saturate(.5) sepia(.35) contrast(1.05) brightness(.85)}
 @keyframes hvFloat{0%,100%{transform:translateY(-18px)}50%{transform:translateY(18px)}}
-@media (max-width:760px){.hv-row{gap:12px}.hv-t{width:38vw;border-radius:18px}.hv-t:nth-child(odd){margin-top:40px}}
+.hv-t{position:relative;container-type:inline-size}
+.hv-t.is-site video{filter:saturate(.8) brightness(.72)}
+.hv-ov{position:absolute;inset:0;color:#fff;font-family:var(--f-b);pointer-events:none}
+.hv-ov svg{display:block}
+.sh-pill{position:absolute;left:50%;bottom:5cqw;transform:translateX(-50%);display:flex;align-items:center;gap:2.4cqw;padding:2.4cqw 4.4cqw 2.4cqw 3cqw;border-radius:99px;background:rgba(12,12,12,.82);border:1px solid rgba(255,127,44,.7);box-shadow:0 0 18px rgba(255,127,44,.45);font:700 4.6cqw/1 var(--f-b);white-space:nowrap}
+.sh-pill svg{width:6cqw;height:6cqw}
+.hv-ov.tt{background:linear-gradient(180deg,rgba(0,0,0,.35),transparent 18%,transparent 62%,rgba(0,0,0,.6))}
+.tt-tabs{position:absolute;top:7cqw;left:0;right:0;display:flex;justify-content:center;gap:4.5cqw;font:600 4.6cqw/1 var(--f-b);text-shadow:0 1px 4px rgba(0,0,0,.5)}
+.tt-tabs span{opacity:.65}
+.tt-tabs b{position:relative}
+.tt-tabs b::after{content:"";position:absolute;left:30%;right:30%;bottom:-2.2cqw;height:.8cqw;border-radius:1cqw;background:#fff}
+.tt-side{position:absolute;right:3.5cqw;bottom:32cqw;display:flex;flex-direction:column;align-items:center;gap:5.5cqw}
+.tt-av{position:relative;width:12cqw;height:12cqw;border-radius:50%;display:grid;place-items:center;background:#111;border:.6cqw solid #fff}
+.tt-av svg{width:6.5cqw;height:6.5cqw}
+.tt-av i{position:absolute;left:50%;bottom:-3cqw;transform:translateX(-50%);width:5.4cqw;height:5.4cqw;border-radius:50%;background:#ff7f2c;display:grid;place-items:center}
+.tt-av i svg{width:3.6cqw;height:3.6cqw;stroke-width:3}
+.tt-ic svg{width:9cqw;height:9cqw;filter:drop-shadow(0 1px 3px rgba(0,0,0,.5))}
+.tt-side .tt-ic:nth-child(2) svg{fill:#ff7f2c;color:#ff7f2c}
+.tt-cap{position:absolute;left:4cqw;right:18cqw;bottom:6cqw}
+.tt-chip{display:inline-flex;align-items:center;gap:1.8cqw;padding:1.8cqw 3cqw;border-radius:2cqw;background:#ff7f2c;color:#0a0a0a;font:700 3.8cqw/1 var(--f-b);white-space:nowrap}
+.tt-chip svg{width:4.4cqw;height:4.4cqw}
+.tt-cap p{margin:2.6cqw 0 0;font:500 4cqw/1.3 var(--f-b);text-shadow:0 1px 4px rgba(0,0,0,.6)}
+@media (max-width:760px){.hv-reel{background:radial-gradient(90% 38% at 50% 0%,rgba(255,127,44,.16),transparent 70%),radial-gradient(80% 30% at 50% 100%,rgba(255,127,44,.09),transparent 70%),#080808}.hv-reel>*{display:none}}
 </style>
 </head>
 <body>
@@ -790,7 +812,7 @@ button.num:hover .n-open .i{transform:translate(2px,-2px)}
   <section class="hero" id="top" aria-labelledby="h1">
     <div class="hero-bg" aria-hidden="true"></div>
     
-    <div class="hv hv-reel" aria-hidden="true"><div class="hv-row"><div class="hv-t" style="--d:0"><video class="" muted playsinline autoplay loop preload="auto" poster="../media/t42136.jpg"><source src="../media/t42136.mp4" type="video/mp4"><source src="../media/t42136.webm" type="video/webm"></video></div><div class="hv-t" style="--d:1"><video class="" muted playsinline autoplay loop preload="auto" poster="../media/t42137.jpg"><source src="../media/t42137.mp4" type="video/mp4"><source src="../media/t42137.webm" type="video/webm"></video></div><div class="hv-t" style="--d:2"><video class="" muted playsinline autoplay loop preload="auto" poster="../media/t42133.jpg"><source src="../media/t42133.mp4" type="video/mp4"><source src="../media/t42133.webm" type="video/webm"></video></div><div class="hv-t" style="--d:3"><video class="" muted playsinline autoplay loop preload="auto" poster="../media/t42135.jpg"><source src="../media/t42135.mp4" type="video/mp4"><source src="../media/t42135.webm" type="video/webm"></video></div><div class="hv-t" style="--d:4"><video class="" muted playsinline autoplay loop preload="auto" poster="../media/t42134.jpg"><source src="../media/t42134.mp4" type="video/mp4"><source src="../media/t42134.webm" type="video/webm"></video></div></div><div class="hv-warm"></div><div class="hv-shade"></div></div>
+    <div class="hv hv-reel" aria-hidden="true"><div class="hv-row"><div class="hv-t" style="--d:0"><video muted playsinline loop preload="none" poster="../media/t42136.jpg"><source src="../media/t42136.mp4" type="video/mp4"><source src="../media/t42136.webm" type="video/webm"></video></div><div class="hv-t is-site" style="--d:1"><video muted playsinline loop preload="none" poster="../media/shop-rec.jpg"><source src="../media/shop-rec.mp4" type="video/mp4"><source src="../media/shop-rec.webm" type="video/webm"></video><div class="hv-ov"><span class="sh-pill"><svg><use href="#b-shopify"/></svg>Shopify store</span></div></div><div class="hv-t" style="--d:2"><video muted playsinline loop preload="none" poster="../media/t42137.jpg"><source src="../media/t42137.mp4" type="video/mp4"><source src="../media/t42137.webm" type="video/webm"></video></div><div class="hv-t is-tt" style="--d:3"><video muted playsinline loop preload="none" poster="../media/t42135.jpg"><source src="../media/t42135.mp4" type="video/mp4"><source src="../media/t42135.webm" type="video/webm"></video><div class="hv-ov tt"><div class="tt-tabs"><span>Following</span><b>For You</b></div><div class="tt-side"><span class="tt-av"><svg><use href="#b-tiktok"/></svg><i><svg><use href="#i-plus"/></svg></i></span><span class="tt-ic"><svg><use href="#i-heart"/></svg></span><span class="tt-ic"><svg><use href="#i-message-circle"/></svg></span><span class="tt-ic"><svg><use href="#i-send"/></svg></span></div><div class="tt-cap"><span class="tt-chip"><svg><use href="#i-shopping-bag"/></svg>TikTok Shop · Add to cart</span><p>Packing today&#39;s orders 📦 #tiktokshop</p></div></div></div><div class="hv-t" style="--d:4"><video muted playsinline loop preload="none" poster="../media/t42134.jpg"><source src="../media/t42134.mp4" type="video/mp4"><source src="../media/t42134.webm" type="video/webm"></video></div></div><div class="hv-warm"></div><div class="hv-shade"></div></div>
     <div class="hero-fade" aria-hidden="true"></div>
     <div class="wrap hero-in">
       <div class="hero-copy" id="hero-copy">
@@ -1334,13 +1356,15 @@ button.num:hover .n-open .i{transform:translate(2px,-2px)}
     }, { passive: true });
   }
 
-  /* ---------- hero background videos: play only while the hero is visible ---------- */
+  /* ---------- reel tiles: desktop only (phones get the plain glow, as on axyglobal.com) ---------- */
   (function(){
-    var hv = $('.hv'); if (!hv) return;
-    var vs = [].slice.call(hv.querySelectorAll('video')), reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
-    function play(on){ vs.forEach(function(v){ if (on && !reduce) { var p = v.play(); if (p && p.catch) p.catch(function(){}); } else v.pause(); }); }
-    if ('IntersectionObserver' in window) new IntersectionObserver(function(es){ play(es[0].isIntersecting); }).observe(hv); else play(true);
-    document.addEventListener('visibilitychange', function(){ play(!document.hidden); });
+    var hv = $('.hv-reel'); if (!hv) return;
+    var mq = window.matchMedia('(max-width: 760px)'), vs = [].slice.call(hv.querySelectorAll('video')), vis = true;
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function sync(){ var on = !mq.matches && vis && !document.hidden && !reduce;
+      vs.forEach(function(v){ if (on) { if (v.preload !== 'auto') { v.preload = 'auto'; v.load(); } var p = v.play(); if (p && p.catch) p.catch(function(){}); } else v.pause(); }); }
+    if ('IntersectionObserver' in window) new IntersectionObserver(function(es){ vis = es[0].isIntersecting; sync(); }).observe(hv);
+    document.addEventListener('visibilitychange', sync); if (mq.addEventListener) mq.addEventListener('change', sync); sync();
   })();
   /* ---------- cases: filter + arrows ---------- */
   var track = $('#cs-track'), prevB = $('.cases .prev'), nextB = $('.cases .next');
