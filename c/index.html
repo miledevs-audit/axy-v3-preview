@@ -746,6 +746,9 @@ button.num:hover .n-open .i{transform:translate(2px,-2px)}
 @media (prefers-reduced-motion:reduce){.hv *{animation:none!important}}
 .hv-axyban .hv-full{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.9)}
 .hv-axyban .hv-shade{background:radial-gradient(42% 46% at 50% 50%,rgba(8,8,8,.88),rgba(8,8,8,.5) 70%,rgba(8,8,8,.15)),linear-gradient(to bottom,rgba(8,8,8,.7),rgba(8,8,8,0) 22%,rgba(8,8,8,0) 75%,rgba(8,8,8,.9))}
+
+.hv-real .hv-shade{background:radial-gradient(40% 44% at 50% 50%,rgba(8,8,8,.82),rgba(8,8,8,.42) 70%,rgba(8,8,8,.08)),linear-gradient(to bottom,rgba(8,8,8,.6),rgba(8,8,8,0) 20%,rgba(8,8,8,0) 82%,rgba(8,8,8,.85))}
+@media (max-aspect-ratio:4/5){.hv-real .hv-shade{background:radial-gradient(70% 34% at 50% 44%,rgba(8,8,8,.8),rgba(8,8,8,.35) 75%,rgba(8,8,8,0)),linear-gradient(to bottom,rgba(8,8,8,.55),rgba(8,8,8,0) 18%)}}
 </style>
 </head>
 <body>
@@ -785,7 +788,7 @@ button.num:hover .n-open .i{transform:translate(2px,-2px)}
   <section class="hero" id="top" aria-labelledby="h1">
     <div class="hero-bg" aria-hidden="true"></div>
     
-    <div class="hv hv-axyban" aria-hidden="true"><video class="hv-full" muted playsinline autoplay loop preload="auto" poster="../media/axyreal.jpg"><source src="../media/axyreal.mp4" type="video/mp4"><source src="../media/axyreal.webm" type="video/webm"></video><div class="hv-shade"></div></div>
+    <div class="hv hv-axyban hv-real" aria-hidden="true"><video class="hv-full" muted playsinline autoplay loop preload="auto"></video><div class="hv-shade"></div></div>
     <div class="hero-fade" aria-hidden="true"></div>
     <div class="wrap hero-in">
       <div class="hero-copy" id="hero-copy">
@@ -1329,6 +1332,18 @@ button.num:hover .n-open .i{transform:translate(2px,-2px)}
     }, { passive: true });
   }
 
+  /* ---------- hero background video: landscape / portrait render by screen shape ---------- */
+  (function(){
+    var v = $('.hv-real video'); if (!v) return;
+    var mq = window.matchMedia('(max-aspect-ratio: 4/5)'), cur = '';
+    function pick(){
+      var n = mq.matches ? 'axyreal-p' : 'axyreal'; if (n === cur) return; cur = n;
+      var ext = v.canPlayType('video/mp4; codecs="avc1.640028"') ? 'mp4' : 'webm';
+      v.poster = '../media/' + n + '.jpg'; v.src = '../media/' + n + '.' + ext; v.load();
+      var p = v.play(); if (p && p.catch) p.catch(function(){});
+    }
+    pick(); if (mq.addEventListener) mq.addEventListener('change', pick);
+  })();
   /* ---------- hero background videos: play only while the hero is visible ---------- */
   (function(){
     var hv = $('.hv'); if (!hv) return;
